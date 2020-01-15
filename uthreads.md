@@ -22,15 +22,15 @@ previously saved or constructed by hand). This enables the operating
 system to suspend and resume execution of programs at will, and also
 enables you to write a user-land threads package.
 
-Let's try an example. Say you have threads `T_A`, $T_B$, and $T_C$ with
-contexts $C_A$, $C_B$, and $C_C$ of which $T_A$ is currently running.
-Say $T_A$ calls `swap(`$C_A, C_B$`)`, causing the current machine state
-to be saved as $C_A$ and the thread $T_B$ to begin executing. $T_B$ then
-does a `swap(`$C_B, C_C$`)`, causing $T_C$ to start running. Eventually
-$T_C$ decides that, for whatever reason it wants to allow thread $T_A$
-to run again. When it calls `swap(`$C_C, C_A$`)`, the machine state that
-was previously saved as $C_A$ is restored, and $T_A$ starts running
-again. From $T_A$'s perspective, the call to `swap()` simply did nothing
+Let's try an example. Say you have threads *T<sub>A</sub>*, *T<sub>B</sub>*, and *T<sub>C</sub>* with
+contexts *C<sub>A</sub>*, *C<sub>B</sub>*, and *C<sub>C</sub>* of which *T<sub>A</sub>* is currently running.
+Say *T<sub>A</sub>* calls `swap(`*C<sub>A</sub>*, *C<sub>B</sub>*`)`, causing the current machine state
+to be saved as *C<sub>A</sub>* and the thread *T<sub>B</sub>* to begin executing. *T<sub>B</sub>* then
+does a `swap(`*C<sub>B</sub>*, *C<sub>C</sub>*`)`, causing *T<sub>C</sub>* to start running. Eventually
+*T<sub>C</sub>* decides that, for whatever reason it wants to allow thread *T<sub>A</sub>*
+to run again. When it calls `swap(`*C<sub>C</sub>*, *C<sub>A</sub>*`)`, the machine state that
+was previously saved as *C<sub>A</sub>* is restored, and *T<sub>A</sub>* starts running
+again. From *T<sub>A</sub>*'s perspective, the call to `swap()` simply did nothing
 except pause for some period of time.
 
 It is important to note that context and threads are fundamentally
