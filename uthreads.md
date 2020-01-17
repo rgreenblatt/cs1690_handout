@@ -223,7 +223,8 @@ interrupt handler.
 Unfortunately, adding preemption to your code does not "just work." Some
 routines (think about mutexes) must run to completion without yielding
 the processor. Use the `uthread_nopreempt_on/off` functions to maintain
-the correctness of key functions.
+the correctness of key functions. There may be cases with nested preemption;
+we deal with this by letting each thread keep track of its own no_prempt_count.
 
 Dealing with Dead Threads: The Reaper
 -------------------------------------
