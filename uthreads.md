@@ -263,6 +263,8 @@ broken. Also, since *uthreads* is built as a library, `gdb` won't find
 the symbols in it right away, so tell it to wait for the "future shared
 library to load".
 
+Here's a great little guide on how to use GDB to debug multi-threaded programs: [https://www.cs.swarthmore.edu/~newhall/unixhelp/gdb_pthreads.php](https://www.cs.swarthmore.edu/~newhall/unixhelp/gdb_pthreads.php)
+
 Test Code
 ---------
 
