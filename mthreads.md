@@ -9,8 +9,7 @@ implementing a library with an M-to-N (M uthreads multiplexed on N
 "kernel" threads) threading model. You can think of `pthreads` as kernel
 threads. Having completed this assignment, your threading library will
 support user-level threads running *in parrallel* on many processors!
-You can copy the stencil code out of the
-`/course/cs167/asgn/mthreads_stencil` directory.
+You can get the stencil by running `cs1670_install mthreads`.
 
 Background
 ==========
@@ -39,7 +38,7 @@ this is most of the work you will be doing.
 
 When implementing this assignment it is also important to keep in mind
 that a user-level thread may be scheduled on any number of kernel
-threads and processors during it's lifetime. This means that in a
+threads and processors during its lifetime. This means that in a
 routine like `uthread_switch`, we need to ensure that data that is
 necessary before and after a user thread is scheduled is not optimized
 away into a CPU register by the compiler.
@@ -66,7 +65,7 @@ which should be used in the appropriate contexts to synchronize various
 LWPs contending for access.
 
 **You only need to worry about modifying functions with TODOs**. Each of
-these also contains an call to our `NOT_YET_IMPLEMENTED` macro. To see a
+these also contains a call to our `NOT_YET_IMPLEMENTED` macro. To see a
 list of all the functions you have yet to modify/implement, run
 `make nyi` in the project working directory.
 
@@ -126,7 +125,9 @@ the system works as a whole.
 The first thing that any executable that uses your threads package
 should call is `uthread_start`. This should be called exactly once and
 is responsible for setting up global data structures such as the
-`uthreads` array (as it did in *uthreads*).
+`uthreads` array (as it did in *uthreads*). Note that it, in turn,
+calls the function to be executed by the first user thread of the
+program.
 
 The major differences between the setup done by `uthread_start` and
 `uthread_init` (from *uthreads*) lies in `create_first_thr`. This
@@ -151,7 +152,9 @@ each thread is allocated it's own private copy of that variable. When
 used with `extern` or `static`, `__thread` must appear as the last
 storage class keyword. Addresses of such variables can be used by other
 threads, though you shouldn't need to worry about that for this
-assignment.
+assignment. This type of storage is known as thread-local storage (TLS). GCC implements it for
+POSIX threads (which you use as your LWPs; not for user threads. Note that TLS is not async-signal safe. This means that if as signal handler can access a TLS item, you must make sure that
+when threads access the item that signals are masked.
 
 What this means for us is that each LWP stores it's own context *in
 addition to* the context of the `uthread` that it is currently running.
