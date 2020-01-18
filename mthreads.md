@@ -278,4 +278,4 @@ Handing In
 
 To hand in your finished assignment, please run this command while in
 the directory containing your code:
-`/course/cs167/bin/cs167_handin mthreads`.
+`/course/cs1670/bin/cs1670_handin mthreads`.
