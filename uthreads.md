@@ -5,7 +5,9 @@ In this project you will develop and test your very own user-level
 threads package complete with thread creation/deletion/joining, mutexes,
 condition variables, and a priority-based scheduler. Having completed
 this assignment, you should be able to write multi-threaded applications
-using your package instead of, say, *pthreads*. Run `/course/cs1670/bin/cs1670_install uthreads` to get started.
+using your package instead of, say, *pthreads*. 
+
+Run `/course/cs1670/bin/cs1670_install uthreads` to get started. This project is due on **Feb 5th at 11:59pm**. 
 
 Background
 ==========
