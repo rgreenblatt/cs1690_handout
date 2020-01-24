@@ -9,6 +9,8 @@ using your package instead of, say, *pthreads*.
 
 Run `/course/cs1670/bin/cs1670_install uthreads` to get started. This project is due on **Feb 5th at 11:59pm**. 
 
+Note: Please **DO NOT** run the handin script (`/course/cs1670/bin/cs1670_handin uthreads`) due to department system issues. We'll let you know once the issue is fixed.
+
 Background
 ==========
 
