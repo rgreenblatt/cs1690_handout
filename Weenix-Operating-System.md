@@ -142,9 +142,11 @@ Thanks also to the many course TAs since the creation of Weenix.
 -   Isaac Davis, Jonathan Lister, Max Luzuriaga, Benjamin Murphy, Jake
     Saferstein, Di Yang (Steven) Shi
 
--   Natalie Lindsay, Peter Cho, Tynan Couture-Rashid, David Armanious, 
+-   Natalie Lindsay, Peter Cho, Tynan Couture-Rashid, David Armanious,
     Ethan Sattler, Gabriel Marks, Ankita Sharma, Sandy Harvie, Ben
     Navetta, Jarod Boone, and Will Povell
+
+-   Peter Cho, Ethan Sattler, Natalie Lindsay, Amos Jackson, Justin Zhang, Wanxin Cai, David Charatan, Gabe Marks, Will Riley, Junlin Zeng
 
 In particular, many thanks to Keith Adams, Adam Fenn, Dave Pacheco,
 Dimitar Bounov, Alvin Kerber, and Chris Siden for their major
