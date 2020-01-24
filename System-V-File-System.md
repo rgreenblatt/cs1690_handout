@@ -1,4 +1,5 @@
-System V File System 
+Under construction
+<!--System V File System 
 ====================
 
 Introduction
@@ -336,3 +337,4 @@ argument. Also, running the `./weenix` script with the `-n` option will
 create a brand new disk for you and fill it with a bunch of sample files
 and directories. To begin this assignment, you must use this option at
 least once, otherwise you will not have a disk to work with.
+-->
