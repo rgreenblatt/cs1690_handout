@@ -1,4 +1,4 @@
-Extra Assignments 
+Extra Assignments
 =================
 
 The features listed on this page are not extra credit. **There is no
@@ -237,43 +237,6 @@ to implement in the same semester you are working on Weenix if you are
 taking it as part of a class, but they represent interesting areas of
 potential further study.
 
-### Multi-core/processor support
-
-There are a few issues which make the jump to multi-processor land
-somewhat painful. One is that the boot process must be overhauled almost
-completely to compensate for the extra processors. You must learn about
-the boot process in the x86 architecture – this will require intimate
-knowledge of ACPI, inter-processor interrupts, the interaction between
-CPUs, I/O APICs and Local APICs, and some knowledge of real-mode 16-bit
-x86 assembly. Setting up page tables correctly becomes more difficult as
-well. You will also have to learn about the global descriptor table
-(GDT) and the task state segment (TSS). (Be warned that once you are
-done with this step, you will probably hate Intel for the rest of your
-life, and also know the x86 architectyure better than anyone you know.)
-
-Once you get the other processors to boot, get into protected mode with
-paging enabled, and then make the jump into the kernel binary, you will
-have to get your processors to do something more interesting than spin.
-This will require a better scheduler, because the usual mechanism for
-getting work off your boot-strap processor and onto your other
-processors is to have the idle processors steal it. Work-stealing can be
-done simply, but the best schemes are rather complicated.
-
-In addition, you will now have to worry about the SMP-safety of your
-kernel. Weenix is certainly not SMP-safe by design, and a lot of
-portions of the kernel make assumptions that are fine when they are the
-only thread running but which quickly deteriorate in the multiprocessor
-world. A library of synchronization primitives will be needed. The
-simplest way to make the kernel SMP-safe is to use a Big Kernel Lock,
-which was done back in old versions of Solaris and Linux. While this is
-a decent starting point, this will lose most of the benefit of
-implementing a multi-processor system, as you will only get any real
-parallelism as long as the programs are running in userland.
-
-If you really want to implement this, talk to Eric Caruso or Jackson
-Owens. This is probably best done along with multi-threaded processes
-and userland preemption, as well.
-
 ### Users
 
 The interesting part about this extension is not necessarily the
@@ -312,21 +275,3 @@ porting Apache or nginx to Weenix.
 Depends on signals, graphical display driver with higher resolution than
 $80 \times 25$, mouse driver, etc. You’ll also need a pseudo-terminal
 subsystem, which will be a huge pain.
-
-### 64-bit support
-
-This isn’t even useful because the Weenix kernel has no way of allowing
-a process to address more than 1GB of memory as it is. (Think about how
-paging works and you will figure out why.)If you want it to be able to
-support large amounts of memory, be prepared to rewrite all of the
-paging code, all of the assembly, and probably a lot of other random
-stuff.
-
-### Kernel preemption
-
-Would require totally redesigning the Weenix kernel to make it
-threadsafe. If this seems reasonable, you are misunderstanding
-something. Userspace preemption is similar and doesn’t require a full
-rewrite of Weenix. Also note that most production kernels don’t even
-support this (because even after you get it working, it’s an absolute
-nightmare to maintain, and it typically adds very little value).
