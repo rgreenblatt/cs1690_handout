@@ -8,7 +8,7 @@ on 1 "kernel" thread) threading model. In *mthreads*, you will be
 implementing a library with an M-to-N (M uthreads multiplexed on N
 "kernel" threads) threading model. You can think of `pthreads` as kernel
 threads. Having completed this assignment, your threading library will
-support user-level threads running *in parrallel* on many processors!
+support user-level threads running *in parallel* on many processors!
 You can get the stencil by running `cs1670_install mthreads`.
 
 Background
