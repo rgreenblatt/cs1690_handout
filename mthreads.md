@@ -153,10 +153,10 @@ used with `extern` or `static`, `__thread` must appear as the last
 storage class keyword. Addresses of such variables can be used by other
 threads, though you shouldn't need to worry about that for this
 assignment. This type of storage is known as thread-local storage (TLS). GCC implements it for
-POSIX threads (which you use as your LWPs; not for user threads. Note that TLS is not async-signal safe. This means that if as signal handler can access a TLS item, you must make sure that
-when threads access the item that signals are masked.
+POSIX threads (which you use as your LWPs; not for user threads. Note that TLS is not async-signal safe. This means that if a signal handler can access a TLS item, you must make sure that
+when threads access the item, signals are masked.
 
-What this means for us is that each LWP stores it's own context *in
+What this means for us is that each LWP stores its own context *in
 addition to* the context of the `uthread` that it is currently running.
 Thus we can expect that `ut_curthr` will change frequently throughout
 the LWP's lifetime (in `lwp_switch`) as it multiplexes various
@@ -164,9 +164,9 @@ user-level threads, whereas `curlwp` will remain constant so that
 various `uthreads` can switch back into the context of their invoking
 LWPs if they need to block or yield. This is exactly what the
 interaction between `uthread_switch` and `lwp_switch` facilitates. A
-`uthread` invoking `uthread_switch` uses it's thread-local `curlwp` to
-jump back into `lwp_switch`, whereas an LWP users the `ut_ctx` member of
-a runnable `uthread` to switch into it's context and begin running.
+`uthread` invoking `uthread_switch` uses its thread-local `curlwp` to
+jump back into `lwp_switch`, whereas an LWP uses the `ut_ctx` member of
+a runnable `uthread` to switch into its context and begin running.
 
 By the end of `uthead_start` all 3 LWPs are ready to begin multiplexing
 `uthread`s. The remainder of the assignment consists of ensuring that
@@ -180,10 +180,10 @@ Assumptions
 -----------
 
 *In this assignment there will be multiple threads running at a time*,
-and on multiple processors. Thus, make sure you must guard
-datastructures appropriately. Be sure to review `uthread.h`, which
+and on multiple processors. Thus, you must make sure you guard
+data structures appropriately. Be sure to review `uthread.h`, which
 contains definitions for `uthread_t` and `lwp_t`, as well as other
-struct definitions for hints as to which data structure accesses need to
+struct definitions, for hints as to which data structure accesses need to
 be synchronized. Importantly, you **cannot** make the assumption that
 each `uthread` is scheduled on exactly one LWP at a time. This is
 something that you must ensure with proper synchronization!
@@ -194,8 +194,8 @@ information. You may, however, assume that any functions that do not
 have TODOs will work properly once you make the required functions
 (described in the **Assignment** section) thread-safe and
 multiprocessor-safe. You will not be held accountable for potential
-problem with the stencil, but you **must** modify your API to work with
-the stencil. If you write alternate implementation that doesn't work
+problems with the stencil, but you **must** modify your API to work with
+the stencil. If you write an alternate implementation that doesn't work
 with the given stencil, you will receive no credit.
 
 Topics from Uthreads
@@ -210,15 +210,15 @@ The Reaper 2.0
 --------------
 
 Conceptually, the reaper in *mthreads* serves the same purpose it did in
-`uthreads`. However, because the reaper can now run in parrallel with
+`uthreads`. However, because the reaper can now run in parallel with
 other `uthread`s, we must be sure that it doesn't clean up resources
 associated with a thread that has just called `uthread_exit` before that
-thread has switched away from it's context and is no longer calling
+thread has switched away from its context and is no longer calling
 functions on that context's stack. For this reason, before the reaper
 calls `uthread_destroy`, it must first attempt to lock the exited
-thread's *ut\_pmut* mutex to be sure that it is no longer using it's
+thread's *ut\_pmut* mutex to be sure that it is no longer using its
 context. It is up to you to implement your `uthread` API so that the
-reaper can safely do it's job.
+reaper can safely do its job.
 
 Compiling and Testing
 =====================
