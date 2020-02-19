@@ -136,7 +136,7 @@ thread, and placing them both on the run queue. It also sets up two
 additional LWPs by calling `uthread_start_lwp` twice.
 `uthread_start_lwp` spawns a pthread which runs `lwp_start`. It is
 important to note that, at this point, each of these two new LWPs has
-it's own `ut_curthr` and `curlwp` variables. This can be seen from the
+its own `ut_curthr` and `curlwp` variables. This can be seen from the
 declarations near the top of `uthread.c`:
 
 ``` {.c}
@@ -148,7 +148,7 @@ __thread lwp_t     *curlwp;
 The `__thread` storage class keyword is an extension to GCC that can be
 used alone or with the `extern` or `static` qualifiers for a global,
 file-scoped static, or function-scoped static variable to ensure that
-each thread is allocated it's own private copy of that variable. When
+each thread is allocated its own private copy of that variable. When
 used with `extern` or `static`, `__thread` must appear as the last
 storage class keyword. Addresses of such variables can be used by other
 threads, though you shouldn't need to worry about that for this
