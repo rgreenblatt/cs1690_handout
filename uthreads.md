@@ -308,4 +308,4 @@ Handing In
 
 To hand in your finished assignment, please run this command while in
 the directory containing your code:
-`/course/cs167/bin/cs167_handin uthreads`.
+`/course/cs167/bin/cs167_handin uthreads`. Remember to include a README that briefly describes any important design decisions you made and mentions known bugs!
