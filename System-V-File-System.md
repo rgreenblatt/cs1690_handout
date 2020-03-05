@@ -1,5 +1,5 @@
 Under construction
-<!--System V File System 
+System V File System 
 ====================
 
 Introduction
@@ -64,6 +64,9 @@ The Weenix caching system uses two different types of objects: page frames, whic
 In general, to get a particular page frame from a memory object, you should call the `mobj_get_pframe()` function on the memory object you wish to get the page from. The data stored in the page is stored at the location pointed to by the page frame’s `pf_addr` field. If the call to `mobj_get_pframe()` requests a page frame for writing to, the returned page frame will be marked so that it will be cleaned (the changes will be written back to disk) later. The cleaning process uses callbacks in the disk’s memory object to write the data back to disk. Importantly, `mobj_get_pframe()` returns with the requested page frame's mutex locked so don't forget to call `pframe_release()` once you're finished using it to unlock the page frame again. 
 
 In S5FS, we provide you with `s5_get_disk_block()` , which handles some synchronization and state checking but is effectively a wrapper for `mobj_get_pframe()`. Similarly, `s5_release_disk_block()` will unlock the page frame's mutex.
+
+To be fixed
+--------------
 
 To use an inode from disk, you must get its page from the disk memory object (the `S5_INODE_BLOCK()` macro will tell you which disk block to get) and then use the `S5_INODE_OFFSET()` macro to index into the page. When you are changing a file or the filesystem data structures, make sure that you remember to dirty the inode if necessary (mark it as modified so it can be written back to disk). Note the presence of the `dirtied_inode` field in `s5_node_t`, which can be set for this purpose. Remember that you should never clean pages yourself as either the the Weenix shutdown sequence will take care of that automatically.
 
