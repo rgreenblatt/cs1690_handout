@@ -1,5 +1,6 @@
 Under construction
-<!--System V File System 
+<!--
+System V File System 
 ====================
 
 Introduction
@@ -57,20 +58,25 @@ S5FS implements directories as normal files that have a special format for their
 Caching
 -------
 
+
+### Memory Objects and Page Frame
+
 At this point, you know a lot about how the on-disk filesystem looks and could probably inspect the disk block-by-block and understand what files are stored there. However, while working on this part of Weenix, you will not need to directly read and write from the disk, even in the most low-level functions. Instead, you will use the VM caching system to read blocks from disk into memory. You can then manipulate these pages in memory, and the Weenix shutdown sequence will automatically handle writing them back to disk.
 
 The Weenix caching system uses two different types of objects: page frames, which are each responsible for tracking one page/block of data, and memory objects, which are each associated with a number of page frames that hold the data for that memory object. In the codebase, the names for these objects are `pframe_t`s and `mobj_t`s, respectively. Each memory object represents some data source, which could be a file, device, or virtual memory region. This means that page frames are used to reference the blocks of files, blocks of a device, and blocks of segments of memory. Specifically, page frames store some metadata about the page they hold and a reference to that page in memory. If a particular page of, say, a file hasn’t been paged into memory, there will not yet be a page frame for that page.
 
 In general, to get a particular page frame from a memory object, you should call the `mobj_get_pframe()` function on the memory object you wish to get the page from. The data stored in the page is stored at the location pointed to by the page frame’s `pf_addr` field. If the call to `mobj_get_pframe()` requests a page frame for writing to, the returned page frame will be marked so that it will be cleaned (the changes will be written back to disk) later. The cleaning process uses callbacks in the disk’s memory object to write the data back to disk. Importantly, `mobj_get_pframe()` returns with the requested page frame's mutex locked so don't forget to call `pframe_release()` once you're finished using it to unlock the page frame again. 
 
-In S5FS, we provide you with `s5_get_disk_block()` , which handles some synchronization and state checking but is effectively a wrapper for `mobj_get_pframe()`. Similarly, `s5_release_disk_block()` will unlock the page frame's mutex.
+### File Block Request
+The userland function to request a file block is `s5_get_file_block()`. It's a file-system level wrapper. it will actually call the get_pframe operation of s5fs memory object, which is implemented by `s5fs_get_pframe()`. This function is implemented by stencil, but we still suggest to look through it as well as the function `s5_file_block_to_disk_block()`. These two function illustrates how s5fs inode could tell which block on the disk should be read. In addition, it shows the way to deal with some special situations like sparse block, which is an empty block from the prespective of s5fs, but could be dirty on the disk. These two function might give you some ideas of how `s5_alloc_block()` should be implemented.
 
-To be fixed
---------------
 
-To use an inode from disk, you must get its page from the disk memory object (the `S5_INODE_BLOCK()` macro will tell you which disk block to get) and then use the `S5_INODE_OFFSET()` macro to index into the page. When you are changing a file or the filesystem data structures, make sure that you remember to dirty the inode if necessary (mark it as modified so it can be written back to disk). Note the presence of the `dirtied_inode` field in `s5_node_t`, which can be set for this purpose. Remember that you should never clean pages yourself as either the the Weenix shutdown sequence will take care of that automatically.
+### Disk Block Request
+To request a specific disk block for S5FS, we could use `s5_get_disk_block()`. It's a disk-level wrapper which handles some synchronization and state checking. It will request memory object of a disk(which is a block device) by `mobj_get_pframe()`. Since this time we use operations for block device memory object, it will actually trigger the `block_fill_pframe()` which is implemented `drivers/blockdev.c` (basically calling the readblock for the disk). `s5_release_disk_block()` will unlock the page frame's mutex. To be notice, the data will be written back to the disk only when `vnode_destructor()` is reached, it will flush all the pframes related to this vnode.
 
-While working on S5FS, you may notice that there are two very similar methods for accessing the data on disk: calling the `get_pframe()` operation of the memory object for the block device (the disk) and on the memory object for the file. Therefore, it can sometimes be confusing which one to use. Although this may sound like common sense, it is important that you use a file’s memory object every time you are dealing with a file, and use the block device’s memory object when you are implementing pieces of the filesystem that are “low-level enough” to know how a file is split across multiple blocks on disk. If you accidentally use the disk memory object instead of the file memory object, you will be short-circuiting a couple layers of abstraction that will be necessary later on.
+
+### Tips
+Although this may sound like common sense, it is important that you use a file’s memory object every time you are dealing with a file, and use the block device’s memory object when you are implementing pieces of the filesystem that are “low-level enough” to know how a file is split across multiple blocks on disk. If you accidentally use the disk memory object instead of the file memory object, you will be short-circuiting a couple layers of abstraction that will be necessary later on.
 
 Error Handling 
 --------------
