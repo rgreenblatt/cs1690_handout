@@ -94,8 +94,6 @@ You need to implement:
 
 -   The low-level subroutines. These subroutines represent common functionality that may be useful to reuse in many of the high-level system calls.
 
--   A few memory management routines (such as `pframe_get()`). This is to understand a little better how the caching system works.
-
 Testing
 -------
 
