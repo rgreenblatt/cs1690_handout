@@ -43,6 +43,8 @@ While the default disk size gives you space for several hundred data blocks, the
 <p align=center><sup>The free block list.</sup></p>
 </p>
 
+To use an inode from disk, you must get its page from the disk memory object (the `S5_INODE_BLOCK()` macro will tell you which disk block to get) and then use the `S5_INODE_OFFSET()` macro to index into the page. When you are changing a file or the filesystem data structures, make sure that you remember to dirty the inode if necessary (mark it as modified so it can be written back to disk). Note the presence of the `dirtied_inode` field in `s5_node_t`, which can be set for this purpose. Remember that you should never clean pages yourself as either the the Weenix shutdown sequence will take care of that automatically.
+
 ### Data Blocks 
 
 Data blocks are where actual file contents are stored. They occur on disk after the inode array and fill the remainder of the disk. For simplicity, disk blocks and virtual memory pages are the same number of bytes in Weenix, although this is not necessarily true for other operating systems.
