@@ -1,5 +1,3 @@
-Under construction
-<!--
 System V File System 
 ====================
 
@@ -116,4 +114,3 @@ We have written some tests for you which you can run from your main process by c
 Be sure that your link counts are correct (`calculate_refcounts()` will calculate the counts for you). Note that you *must* make sure you are actually shutting down cleanly (i.e. see the “Weenix halted” message). Reference count issues will prevent Weenix from shutting down cleanly.
 
 To ease the difficulty of debugging your file system code, we have provided a couple of utilities to help you develop. The `fsmaker` utility will come in handy for inspecting blocks, inodes, and other data structures on your virtual machine’s disk. To read more about how to use `fsmaker`, run `fsmaker –help` from the root of your development directory. Your disks are stored in files on the host operating system (the `user/disk*.img` files), and must be passed to `fsmaker` as an argument. Also, running the `./weenix` script with the `-n` option will create a brand new disk for you and fill it with a bunch of sample files and directories. To begin this assignment, you must use this option at least once, otherwise you will not have a disk to work with.
--->
