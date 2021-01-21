@@ -7,9 +7,9 @@ condition variables, and a priority-based scheduler. Having completed
 this assignment, you should be able to write multi-threaded applications
 using your package instead of, say, *pthreads*. 
 
-Run `/course/cs1670/bin/cs1670_install uthreads` to get started. This project is due on **Feb 3rd at 11:59pm**. 
+If this is your first time installing an assignment, or you need a refresher, please refer to the Github & Gradescope guide. This will walk you through how to get setup with Git and install an assignment. 
 
-Note: Please **DO NOT** run the handin script (`/course/cs1670/bin/cs1670_handin uthreads`) due to department system issues. We'll let you know once the issue is fixed.
+To get started accept the Github assignment linked here. Be sure to make commits frequently so you won’t lose your work!. This project is due on **Feb 3rd at 11:59pm**. 
 
 Background
 ==========
@@ -309,6 +309,4 @@ such a situation you will need to use `gdb` to debug your program.
 Handing In
 ==========
 
-To hand in your finished assignment, please run this command while in
-the directory containing your code:
-`/course/cs167/bin/cs167_handin uthreads`. Remember to include a README that briefly describes any important design decisions you made and mentions known bugs!
+To hand in your project please refer to the Github & Gradescope guide.
