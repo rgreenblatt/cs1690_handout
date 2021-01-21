@@ -174,6 +174,10 @@ you are writing the scheduling mechanism, you know that a call to
 *pthreads*). Therefore, you should not need to use condition variable
 guards as much in code which uses *uthreads*.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/44309688/105413931-cc2c1e00-5c04-11eb-98ed-1841fa8fa777.png" alt="Life cycle of a uthread" height="400" />
+</p>
+
 Assumptions
 -----------
 
