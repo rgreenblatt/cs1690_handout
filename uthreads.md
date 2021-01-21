@@ -102,7 +102,7 @@ void uthread_block();
 void uthread_wake(uthread_t *uthr);
 int uthread_setprio(uthread_id_t id, int prio);
 void uthread_switch();
-void clock_interrupt();
+void clock_interrupt(int sig);
 
 // uthread_mtx.c
 void uthread_mtx_init(uthread_mtx_t *mtx);
