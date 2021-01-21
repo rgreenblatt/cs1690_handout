@@ -179,11 +179,10 @@ Assumptions
 
 A note on some of the assumptions that you may make when writing this
 assignment: *uthreads* will never have more than one thread running at
-any one time, and threads are never preempted (control is never randomly
+any one time, and threads can be preempted (control can be randomly
 taken away from a thread that is running). Handling multiple CPUs (the
 ability to run more than one thread concurrently) is beyond the scope of
-this assignment, as is preemptive scheduling of threads. These
-simplifications allow you to forgo taking locks on global *uthreads*
+this assignment. These simplifications allow you to forgo taking locks on global *uthreads*
 data structures if you do not call a function that might put the thread
 to sleep while modifying the data. This should greatly simplify writing
 all the code in this assignment.
