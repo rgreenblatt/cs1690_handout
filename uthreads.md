@@ -7,7 +7,7 @@ condition variables, and a priority-based scheduler. Having completed
 this assignment, you should be able to write multi-threaded applications
 using your package instead of, say, *pthreads*. 
 
-Run `/course/cs1670/bin/cs1670_install uthreads` to get started. This project is due on **Feb 5th at 11:59pm**. 
+Run `/course/cs1670/bin/cs1670_install uthreads` to get started. This project is due on **Feb 3rd at 11:59pm**. 
 
 Note: Please **DO NOT** run the handin script (`/course/cs1670/bin/cs1670_handin uthreads`) due to department system issues. We'll let you know once the issue is fixed.
 
@@ -66,7 +66,7 @@ wrappers around the Linux functions for creating and swapping contexts.
 The *uthreads* functions which we give you that you might have to call
 yourself are:
 
-``` {.c}
+```c
 // uthread.c
 char *alloc_stack();
 void free_stack(char*stack);
@@ -85,7 +85,7 @@ as well as the functions in `uthread_queue.h` and the macros in
 
 The *uthreads* API functions which you must implement are:
 
-``` {.c}
+```c
 // uthread.c
 void uthread_init();
 int uthread_create(uthread_id_t *uidp, uthread_func_t func,
@@ -102,7 +102,7 @@ void uthread_block();
 void uthread_wake(uthread_t *uthr);
 int uthread_setprio(uthread_id_t id, int prio);
 void uthread_switch();
-void uthread_sched_init();
+void clock_interrupt();
 
 // uthread_mtx.c
 void uthread_mtx_init(uthread_mtx_t *mtx);
