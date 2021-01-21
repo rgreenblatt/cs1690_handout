@@ -7,7 +7,7 @@ condition variables, and a priority-based scheduler. Having completed
 this assignment, you should be able to write multi-threaded applications
 using your package instead of, say, *pthreads*. 
 
-If this is your first time installing an assignment, or you need a refresher, please refer to the [[Github-and-Gradescope guide|Github-and-Gradescope]]. This will walk you through how to get setup with Git and install an assignment. 
+If this is your first time installing an assignment, or you need a refresher, please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. This will walk you through how to get setup with Git and install an assignment. 
 
 To get started accept the Github assignment linked here. Be sure to make commits frequently so you won’t lose your work!. This project is due on **Feb 3rd at 11:59pm**. 
 
@@ -309,4 +309,4 @@ such a situation you will need to use `gdb` to debug your program.
 Handing In
 ==========
 
-To hand in your project please refer to the [[Github-and-Gradescope guide|Github-and-Gradescope]].
+To hand in your project please refer to the [[Github and Gradescope guide|Github-and-Gradescope]].
