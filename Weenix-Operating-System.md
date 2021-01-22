@@ -69,7 +69,7 @@ virtual machine including a simulated real machine. Chris Siden, Alvin
 Kerber, and Shaun Verch were the major contributors for this move.
 Weenix has since moved onto QEMU, an x86 processor emulator.
 
-The features of Weenix now include:
+The features of Weenix included:
 
 -   Intelligent multitasking
 
@@ -80,6 +80,22 @@ The features of Weenix now include:
 -   Polymorphic file system support
 
 -   Advanced device support (including APIC and PATA with BMIDE)
+
+In the fall of 2018, Tom and group of students sought to port Weenix to x86_64 and generally improve the Weenix operating system.
+The following spring, David Armanious, made massive improvements to Weenix including:
+
+-   Symmetric multiprocessing
+
+-   Kernel and Userspace preemption
+
+-   ACPI support
+
+-   Improved VFS and VM subsystems
+
+-   Improved VGA support
+
+-   Much, much, more 
+ 
 
 Acknowledgements
 ----------------
