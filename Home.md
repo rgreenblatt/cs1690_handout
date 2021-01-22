@@ -12,6 +12,7 @@ Assignments for CS1690 only:
 ### Introduction  
 * [[Weenix Operating System]]
 * [[Project Management]]
+* [[Getting Started with Weenix]]
 
 ### Assignments
 1.  [[Processes and Threads]]
