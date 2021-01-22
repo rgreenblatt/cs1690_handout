@@ -7,7 +7,8 @@ You’ll no longer have to create a ssh connection or depend on the department m
 After setting up your VM, you’ll be able to edit files locally and then compile them in your VM with ease.
 
 ### Setup
-Follow the instructions to [setup Vagrant here](http://cs.brown.edu/courses/csci1310/2020/assign/labs/lab0.html). CS131 has an awesome guide written, and it’s been tested by a lot of our TAs who have also set it up. This process will take less than thirty minutes and save you a lot of time!
+Follow the instructions to [setup Vagrant here](http://cs.brown.edu/courses/csci1310/2020/assign/labs/lab0.html).
+CS131 has an awesome guide written, and it’s been tested by a lot of our TAs who have also set it up. This process will take less than thirty minutes and save you a lot of time!
 Please use this cs1670-specific Vagrantfile, instead of the one provided in the guide. 
 
 ### Troubleshooting
