@@ -81,8 +81,7 @@ The features of Weenix included:
 
 -   Advanced device support (including APIC and PATA with BMIDE)
 
-In the fall of 2018, Tom and group of students sought to port Weenix to x86_64 and generally improve the Weenix operating system.
-The following spring, David Armanious, made massive improvements to Weenix including:
+In the fall of 2018, Tom and group of students ported Weenix to x86_64. The following spring, David Armanious, made massive improvements to Weenix including:
 
 -   Symmetric multiprocessing
 
@@ -96,6 +95,17 @@ The following spring, David Armanious, made massive improvements to Weenix inclu
 
 -   Much, much, more 
  
+Incremental improvements have been made since, including:
+
+-   Additional features and optimizations for the VFS subsystem
+
+-   Rewrites of the disk and screen drivers
+
+-   VT100 terminal codes
+
+-   Improved documentation throughout the system
+
+-   Timers and CMOS clock support.
 
 Acknowledgements
 ----------------
