@@ -148,8 +148,10 @@ Thanks also to the many course TAs since the creation of Weenix.
 
 -   Peter Cho, Ethan Sattler, Natalie Lindsay, Amos Jackson, Justin Zhang, Wanxin Cai, David Charatan, Gabe Marks, Will Riley, Junlin Zeng
 
-In particular, many thanks to Keith Adams, Adam Fenn, Dave Pacheco,
-Dimitar Bounov, Alvin Kerber, and Chris Siden for their major
+-   Ethan Sattler, Gabriel Marks, Bryan Zhang, Jason Crowley, Peter Harvie, Star Su Su, Will Hayward, Esther Kim
+
+In particular, many thanks Keith Adams, Adam Fenn, Dave Pacheco,
+Dimitar Bounov, Alvin Kerber, Chris Siden, and David Armanious for their major
 contributions to the project.
 
 Finally, thanks to the innumerable students who have implemented Weenix
