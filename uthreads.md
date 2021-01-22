@@ -7,11 +7,13 @@ condition variables, and a priority-based scheduler. Having completed
 this assignment, you should be able to write multi-threaded applications
 using your package instead of, say, *pthreads*. 
 
-This link to the assignment is on Github Classroom: **[here](https://classroom.github.com/a/kBJ2FSMi)**.
+Download the stencil **[here](https://classroom.github.com/a/kBJ2FSMi)**.
 
 If this is your first time installing a Github Classroom assignment, or you need a refresher, please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. This will walk you through how to get setup with Git and install an assignment. 
 
-To get started accept the Github assignment linked here. Be sure to make commits frequently so you won’t lose your work!. This project is due on **Feb 3rd at 11:59pm**. 
+Please be sure to run and compile your code in a Linux environment. Some options are working on the department machines (over SSH) or setting up a virtual environment using Vagrant/VirtualBox. We will hold a gearup soon on how to set up a VM. 
+
+To get started accept the Github assignment linked here. Be sure to make commits frequently so you won’t lose your work!. This project is due on **Feb 3rd at 11:59 PM ET**. 
 
 Background
 ==========
