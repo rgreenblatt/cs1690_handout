@@ -24,7 +24,7 @@ You will be handing in using your Github repository through Gradescope. If this 
 * In order to facilitate anonymous grading, we ask that you edit the Full Name field for your account into an anonymous string, feel free to use something like https://www.random.org/strings/ to generate a random string 
     * Please make sure the email contains your name so we can keep track of who you are and assign you a grade at the end of the semester!
 
-The entry code to the class is **MNV6ZX**
+The entry code to the class is **6PGWVW**
 
 
 Click on the assignment or lab you are submitting for, and you should see the image on the left.
