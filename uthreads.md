@@ -11,7 +11,7 @@ Download the stencil **[here](https://classroom.github.com/a/kBJ2FSMi)**.
 
 If this is your first time installing a Github Classroom assignment, or you need a refresher, please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. This will walk you through how to get setup with Git and install an assignment. 
 
-Please be sure to run and compile your code in a Linux environment. Some options are working on the department machines (over SSH) or setting up a virtual environment using Vagrant/VirtualBox. We will hold a help session soon on uthreads and on how to set up a VM (see the Assignment calendar for more details). 
+Please be sure to run and compile your code in a Linux environment. Some options are working on the department machines (over SSH) or setting up a virtual environment using Vagrant/VirtualBox. Please see our [[Vagrant Guide|Vagrant-Guide]] for more details. Alternatively, we will hold a help session soon on uthreads and on how to set up a VM (see the Assignment calendar for more details). 
 
 To get started accept the Github assignment linked here. Be sure to make commits frequently so you won’t lose your work!. This project is due on **Feb 3rd at 11:59 PM ET**. 
 
