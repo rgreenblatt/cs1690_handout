@@ -24,11 +24,10 @@ There are a few options if you want to work from home:
 ## Vagrant
 If you want to work on Weenix on your own machine, we recommend using [Vagrant](http://www.vagrantup.com/). Using Vagrant and the Vagrantfile provided in the directory you cloned, you can spawn a VM running Linux with all dependencies necessary for running Weenix. You'll also need a virtualizer, such as VirtualBox or VMWare. To get this working:
 
-1. Get the Weenix source code onto your computer. If you are on Windows, we recommend you use WinSCP. Other methods (e.g. creating a zipfile/tarball and emailing it to yourself) have been known to cause issues with symlinks. If you have these problems, look at the note below for Cygwin users. SCP works for Linux/macOS.
-2. Install the relevant VirtualBox platform packages from [here](https://www.virtualbox.org/wiki/Downloads).
-3. Install [Vagrant](http://www.vagrantup.com/).
-4. Install an X server and an SSH client. Most people probably already have one installed (XQuartz on Mac; PuTTY, MobaXTerm, or Xming on Windows), particularly if you've set up SSH with X11 forwarding.
-5. In your Weenix repository on your home computer, run `vagrant up` from the terminal on macOS or Linux, or the command prompt on Windows. Vagrant will traverse up until it finds the Vagrantfile at the root of the repository, create a VM with the correct specifications, and launch it in the background (headless). This will take some time.
+1. Clone your Weenix repository from GitHub Classroom onto your computer.
+2. Follow our [[Vagrant Guide]] to set up your VM.
+3. Install an X server and an SSH client. Most people probably already have one installed (XQuartz on Mac; PuTTY, MobaXTerm, or Xming on Windows), particularly if you've set up SSH with X11 forwarding.
+4. In your Weenix repository on your home computer, run `vagrant up` from the terminal on macOS or Linux, or the command prompt on Windows. Vagrant will traverse up until it finds the Vagrantfile at the root of the repository, create a VM with the correct specifications, and launch it in the background (headless). This will take some time.
 
 After these steps, your virtual machine will be setup. You'll be able to SSH into the machine (with X11 forwarding), by running `vagrant ssh -- -Y` in a terminal on macOS. If you're on Windows, running this command may fail, but it will give you information that you can use to configure an SSH session in MobaXTerm or another SSH client, which you can use to SSH in to the VM. Once you're SSH'd in, run `cd /vagrant`. You should see your shared Weenix directory. You can compile and run Weenix from here.
 
