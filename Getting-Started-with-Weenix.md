@@ -2,7 +2,7 @@
 To run Weenix, use the following commands from the project root:
 ```bash
 make
-./weenix -n  # or, equivalently, rw -n
+./weenix -n
 ```
 (note that the `-n` is only required for the first run, more on this later)
 
