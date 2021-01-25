@@ -23,7 +23,7 @@ have a choice between doing either:
 -   All five assignments.
 
 -   A separate threads library assignment followed by two of the Weenix
-    assignments ( and ).
+    assignments ([[Virtual File System]] and [[System V File System]]).
 
 Students pursuing the former option are assigned a mentor from the
 course staff who will be a source of clarification or hints if the
