@@ -13,7 +13,7 @@ Your Weenix should run and then panic with the following error:
 ```
 initproc_start(): Not yet implemented: PROCS: initproc_start, file main/kmain.c, line 167
 ```
-If this happens, you are all set to start working on [Procs|Processes-and-Threads]!
+If this happens, you are all set to start working on [[Procs|Processes-and-Threads]]!
 
 Note that although we're providing some functions, you'll still have to implement everything listed by the output of `make nyi`.
 
