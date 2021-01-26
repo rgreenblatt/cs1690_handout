@@ -131,7 +131,7 @@ and only need to use spinlocks if you want to implement multi-core safety.
 The mutexes will be used later, in the Drivers and S5FS projects.
 
 
-**Note:** for 2021 spring, the implementation of kmutex has been provided in assembly form (proc/kmutex.S). We will release the full C source code after the `uthreads` project.
+**Note for 2021 spring:** the implementation of kmutex has been provided in assembly form (proc/kmutex.S). We will release the full C source code after the `uthreads` project.
 
 ## 3.7 Testing
 It is your responsibility to think of boundary conditions which could potentially
