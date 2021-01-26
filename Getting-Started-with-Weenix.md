@@ -11,7 +11,7 @@ make
 
 Your Weenix should run and then panic with the following error:
 ```
-C0 P1 panic in main/kmain.c:103 make_devices(): assertion failed: !status || status == -EEXIST
+initproc_start(): Not yet implemented: PROCS: initproc_start, file main/kmain.c, line 167
 ```
 If this happens, you are all set to start working!
 
