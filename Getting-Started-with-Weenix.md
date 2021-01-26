@@ -1,4 +1,7 @@
 ## Getting Started
+
+To get started accept the [Weenix Assignment](https://classroom.github.com/a/qk-Rm9gN) from GitHub classroom
+
 To run Weenix, use the following commands from the project root:
 ```bash
 make
