@@ -9,7 +9,14 @@ implementing a library with an M-to-N (M uthreads multiplexed on N
 "kernel" threads) threading model. You can think of `pthreads` as kernel
 threads. Having completed this assignment, your threading library will
 support user-level threads running *in parallel* on many processors!
-You can get the stencil by running `cs1670_install mthreads`.
+
+
+Download the stencil **[here](https://classroom.github.com/a/kBJ2FSMi)**.
+
+If this is your first time installing a Github Classroom assignment, or you need a refresher, please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. This will walk you through how to get setup with Git and install an assignment. 
+
+Please be sure to run and compile your code in a Linux environment. Some options are working on the department machines (over SSH) or setting up a virtual environment using Vagrant/VirtualBox. Please see our [[Vagrant Guide|Vagrant-Guide]] for more details.
+
 
 Background
 ==========
@@ -276,6 +283,4 @@ such a situation you will need to use `gdb` to debug your program.
 Handing In
 ==========
 
-To hand in your finished assignment, please run this command while in
-the directory containing your code:
-`/course/cs1670/bin/cs1670_handin mthreads`. Remember to include a README that briefly describes any important design decisions you made and mentions known bugs!
+To hand in your project please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. Remember to include a README that briefly describes any important design decisions you made and mentions known bugs!
