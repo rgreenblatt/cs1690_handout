@@ -11,7 +11,7 @@ threads. Having completed this assignment, your threading library will
 support user-level threads running *in parallel* on many processors!
 
 
-Download the stencil **[here](https://classroom.github.com/a/kBJ2FSMi)**.
+Download the stencil **[here](https://classroom.github.com/a/kwgNv4Dz)**.
 
 If this is your first time installing a Github Classroom assignment, or you need a refresher, please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. This will walk you through how to get setup with Git and install an assignment. 
 
