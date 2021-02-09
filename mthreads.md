@@ -83,7 +83,7 @@ execute independent of any `uthread` context, waiting for a runnable
 `uthread` to become available. Here's a list of functions you'll need to
 touch while working on this assignment:
 
-``` {.c}
+```c
 // uthread.c
 uthread_exit(int status);
 uthread_join(uthread_id_t uid, int *return_value);
@@ -146,7 +146,7 @@ important to note that, at this point, each of these two new LWPs has
 its own `ut_curthr` and `curlwp` variables. This can be seen from the
 declarations near the top of `uthread.c`:
 
-``` {.c}
+```c
 // uthread.c
 __thread uthread_t *ut_curthr = 0;
 __thread lwp_t     *curlwp;
