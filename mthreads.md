@@ -85,25 +85,25 @@ touch while working on this assignment:
 
 ```c
 // uthread.c
-uthread_exit(int status);
-uthread_join(uthread_id_t uid, int *return_value);
+uthread_exit(void *status);
+uthread_join(uthread_id_t uid, void **return_value);
 uthread_detach(uthread_id_t uid);
 make_reapable(uthread_t *uth);
 
 // uthread_sched.c
 uthread_yield(void);
-uthread_block(void);
 uthread_wake(uthread_t *uth);
 uthread_setprio(uthread_id_t id, int prio);
-uthread_switch(utqueue_t *q, uthread_t *thr, pthread_mutex_t *m);
+uthread_startonrunq(uthread_id_t id, int prio);
+uthread_switch(utqueue_t *q, int saveonrq, pthread_mutex_t *m);
 lwp_switch(void);
 lwp_park(void);
 uthread_runq_enqueue(uthread *thr);
-uthread_runq_requeue(uthread *thr);
+uthread_runq_requeue(uthread *thr, int oldprio);
 
 // uthread_mtx.c
-uthread_mutex_lock(uthread_mtx_t *mtx);
-uthread_mutex_trylock(uthread_mtx_t *mtx);
+uthread_mtx_lock(uthread_mtx_t *mtx);
+uthread_mtx_trylock(uthread_mtx_t *mtx);
 uthread_mtx_unlock(uthread_mtx_t *mtx);
 
 // uthread_cond.c
