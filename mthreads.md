@@ -199,7 +199,7 @@ The stencil as provided will not work because uthreads aren't
 synchronized, so running the stencil as given will not give you any
 information. You may, however, assume that any functions that do not
 have TODOs will work properly once you make the required functions
-(described in the **Assignment** section) thread-safe and
+(described in the **[[Assignment | mthreads#the-assignment]]** section) thread-safe and
 multiprocessor-safe. You will not be held accountable for potential
 problems with the stencil, but you **must** modify your API to work with
 the stencil. If you write an alternate implementation that doesn't work
@@ -210,8 +210,9 @@ Topics from Uthreads
 
 Understanding the concepts from *uthreads* will be very important in
 *mthreads*. You may want to reread the *uthreads* assignment, including
-the sections Swapping Contexts, Time Slicing and Preemption, Dangers of
-Preemption, and the Reaper.
+the sections [[Swapping Contexts | uthreads#swapping-contexts]],
+[[Time Slicing and Preemption | uthreads#time-slicing-and-preemption]],
+[[Dangers of Preemption | uthreads#dangers-of-preemption]], and the [[Reaper | uthreads#dealing-with-dead-threads-the-reaper]].
 
 The Reaper 2.0
 --------------
