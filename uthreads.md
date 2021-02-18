@@ -94,8 +94,8 @@ The *uthreads* API functions which you must implement are:
 void uthread_init();
 int uthread_create(uthread_id_t *uidp, uthread_func_t func,
                    long arg1, void *arg2, int prio);
-void uthread_exit(int status);
-int uthread_join(uthread_id_t uid, int *return_value);
+void uthread_exit(void *status);
+int uthread_join(uthread_id_t uid, void **return_value);
 int uthread_detach(uthread_id_t uid);
 uthread_id_t uthread_alloc();
 void uthread_destroy (uthread_t *uth);
@@ -313,4 +313,4 @@ such a situation you will need to use `gdb` to debug your program.
 Handing In
 ==========
 
-To hand in your project please refer to the [[Github and Gradescope guide|Github-and-Gradescope]].
+To hand in your project please refer to the [[Github and Gradescope guide|Github-and-Gradescope]]. Remember to include a README that briefly describes any important design decisions you made and mentions known bugs!
