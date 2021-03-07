@@ -1,6 +1,9 @@
 # Virtual File System
 
-## 5.0 167 Notes
+## 5.0 Logistics
+
+Accept the assignment [here](https://classroom.github.com/a/DXCRUVVO)!
+
 The stencil for this assignment is a partially completed version of Weenix. This code contains the completed PROCS and DRIVERS projects (in assembly file form). You do not need to modify anything in the `proc/` or `drivers/`.  
 
 ## 5.1 VFS Introduction
@@ -77,4 +80,6 @@ Note that for each of these functions, we provide to you a list of error conditi
 ## 5.6 Testing
 You should have lots of good test code. What does this mean? It means that you should be able to demonstrate fairly clearly – via TTY I/O and debug statements – that you have successfully implemented as much as possible without having S5FS yet. Moreover, you want to be sure that your reference counts are correct (when your Weenix shuts down, `vfs_shutdown()` will check reference counts and panic if something is wrong). Note that you must make sure you are actually shutting down cleanly (i.e. see the “Weenix halted cleanly” message), otherwise this check might not have happened successfully. Basically, convince yourself that this works and get ready for the next assignment – implementing the real file system.
 
-We have written some tests for you which you can run from your main process by calling `vfstest_main`, which is defined in `test/vfstest/vfstest.c`, or by running the `vfstest` command in the kshell. Be sure to add a function prototype for vfstest main at the top of the source file where you call the function. Note that the existence of vfstest is not an excuse for not writing your own tests, though the tests provided are fairly comprehensive.
+We have written some tests for you which you can run from your main process by calling `vfstest_main`, which is defined in `test/vfstest/vfstest.c`, or by running the `vfstest` command in the kshell. Be sure to add a function prototype for vfstest main at the top of the source file where you call the function. A fully working VFS implementation should be able to run `vfstest` multiple times in succession and still halt cleanly.
+
+Note that the existence of vfstest is not an excuse for not writing your own tests, though the tests provided are fairly comprehensive.
