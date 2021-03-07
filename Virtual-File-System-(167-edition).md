@@ -6,6 +6,15 @@ Accept the assignment [here](https://classroom.github.com/a/DXCRUVVO)!
 
 The stencil for this assignment is a partially completed version of Weenix. This code contains the completed PROCS and DRIVERS projects (in assembly file form). You do not need to modify anything in the `proc/` or `drivers/`.  
 
+To build Weenix: `make clean all` or `make all` (use make clean all if you've changed a header file)
+
+To run Weenix:
+* Normally: `./weenix`
+* With GDB: `./weenix -d`
+
+For more info see: [Getting Started With Weenix](https://github.com/brown-cs1690/handout/wiki/Getting-Started-with-Weenix)
+
+
 ## 5.1 VFS Introduction
 The virtual file system, known as the “VFS” provides a common interface between the operating system kernel and the various file systems. The VFS interface allows one to add many different types of file systems to one’s kernel and access them through the same UNIX-style interface. For instance, here are three examples of writing to a “file”:
 
