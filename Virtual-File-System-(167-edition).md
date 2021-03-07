@@ -9,7 +9,7 @@ The stencil for this assignment is a partially completed version of Weenix. This
 To build Weenix: `make clean all` or `make all` (use make clean all if you've changed a header file)
 
 To run Weenix:
-* Normally: `./weenix`
+* Normally: `./weenix -n`
 * With GDB: `./weenix -d`
 
 For more info see: [Getting Started With Weenix](https://github.com/brown-cs1690/handout/wiki/Getting-Started-with-Weenix)
