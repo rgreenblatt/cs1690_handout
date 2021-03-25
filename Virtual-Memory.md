@@ -43,7 +43,8 @@ of Weenix processes, and it should now make even more sense why we used
 memory objects extensively in the last assignment instead of reading and
 writing directly to disk. Of course, some memory areas will not
 correspond to existing data (the stack and heap, for instance). We will
-explain how that works in the section on .
+explain how that works in the section on 
+[Anonymous Objects](#anonymous-objects).
 
 In order to manage address spaces, you must maintain each process’ list
 of virtual memory areas. Each memory region is essentially a range of
@@ -131,7 +132,7 @@ exclusively for pages of files or disks that have been mapped into
 memory. You will extend it by creating memory objects which will provide
 two new types of memory which are not backed by any on-disk structures.
 
-### Anonymous Objects {#anon}
+### Anonymous Objects
 
 So far, you have used the memory objects of your block device and files
 to fill page frames as you needed data from disk, but it does not make
